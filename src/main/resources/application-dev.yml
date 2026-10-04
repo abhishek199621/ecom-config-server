@@ -1,0 +1,20 @@
+server:
+  port: 8084
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri : https://github.com/abhishek199621/ecom-config-store.git
+          clone-on-start: true
+          default-label: master
+          username: ${GIT_USERNAME}
+          password: ${GIT_PASSWORD}
+          search-paths:
+            - Global
+            - OrderService
+            - InventoryService
+
+    compatibility-verifier:
+      enaled: false
+
